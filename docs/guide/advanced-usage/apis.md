@@ -9,7 +9,7 @@ It accepts GET requests. Here're the parameters:
 | Parameter | Description | Optional | Default | Remarks |
 | --- | --- | --- | --- | --- |
 | url | The URL of the original subscription or node sharing link. **It needs to be URIComponent encoded.** | No | - | Multiple subscription links are supported. You can use line breaks or "\|" to separate them. `https://t.me/...` links are treated as standalone share links (parsed as V2Ray nodes), not as remote subscription URLs. |
-| template | Template ID used to render the final config. | Yes | zju | Built-in values are `zju` and `general`. When omitted, `zju` is used. |
+| template | Template ID used to render the final config. | Yes | general | Built-in values are `zju` and `general`. When omitted, `general` is used. |
 | interval | The interval of proxy update. | Yes | 1800 | Unit: seconds. |
 | urlstandby | The URL of the standby subscription or node sharing link. The proxies in it will only be added to the **manual switch group** (the group whose `"manual"` is `True` in the configuration file), and will not be classified into region groups. **It's recommended to be URIComponent encoded.** | Yes | - | Multiple subscription links are supported. You can use line breaks or "|" to separate them. |
 | short | If this parameter is set (regardless of its value), the header section and dns section containing allow-lan will not be generated. | Yes | - | - |
@@ -44,4 +44,4 @@ It accepts GET requests. Here're the parameters:
 | Parameter | Description | Optional | Default | Remarks |
 | --- | --- | --- | --- | --- |
 | url | The URL to be proxied. **It needs to be URIComponent encoded.** | No | - | Use this service to access this URL and return the result. |
-| template | Template ID used for rule whitelist validation. | Yes | zju | This should match the template used in `/sub`; the generated config already includes it when needed. |
+| template | Template ID used for rule whitelist validation. | Yes | general | This should match the template used in `/sub`; the generated config already includes it when needed. |

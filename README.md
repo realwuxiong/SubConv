@@ -6,7 +6,7 @@ English | [中文](README_CN.md)
 
 This project is a subscription converter aiming to transform subscriptions into mihomo-compatible configs.
 
-We ship two built-in templates in the root `template/` directory: `zju.yaml` and `general.yaml`. The Web UI defaults to `zju`, and the API does the same when the `template` query parameter is omitted. The repository includes `config.yaml.example` as the default runtime config.
+We ship two built-in templates in the root `template/` directory: `zju.yaml` and `general.yaml`. The Web UI defaults to `general`, and the API does the same when the `template` query parameter is omitted. The repository includes `config.yaml.example` as the default runtime config.
 
 ## Screenshot
 
@@ -34,7 +34,7 @@ We ship two built-in templates in the root `template/` directory: `zju.yaml` and
 - `subconv/`: FastAPI backend and converter logic
 - `api.py`: thin entrypoint used by the CLI and Vercel
 - `config.yaml.example`: example runtime config; put user changes in `config.yaml`
-- `template/`: runtime YAML templates (`zju.yaml` is the default, `general.yaml` is the alternate)
+- `template/`: runtime YAML templates (`general.yaml` is the default, `zju.yaml` is also available)
 - `mainpage/`: Vue/Vite frontend
 - `docs/`: VitePress documentation site, deployed separately via GitHub Pages
 

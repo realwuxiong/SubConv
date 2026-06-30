@@ -8,7 +8,7 @@
 
 它易于部署，可以部署在 [Vercel](https://vercel.com)、Docker 或您自己的 VPS 上。
 
-我们提供内置的 `zju` 和 `general` 两套模板，并默认使用 `zju`
+我们提供内置的 `zju` 和 `general` 两套模板，并默认使用 `general`
 
 ## 截图
 

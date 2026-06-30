@@ -13,7 +13,7 @@ First make sure you have installed Docker and Docker Compose.
 
 2. Run `cp config.yaml.example config.yaml` to create the runtime config file (required by `docker-compose.yml`).
 
-3. Put your runtime changes in `config.yaml`, then adjust `template/zju.yaml` or `template/general.yaml` as needed. The container uses the template named by `DEFAULT_TEMPLATE`, which is `zju` by default.
+3. Put your runtime changes in `config.yaml`, then adjust `template/general.yaml` or `template/zju.yaml` as needed. The container uses the template named by `DEFAULT_TEMPLATE`, which is `general` by default.
 
 4. Review the bundled `docker-compose.yml` if you want to change the published port or the mounted config/template paths. By default it mounts `./config.yaml:/app/config.yaml` and `./template:/app/template`, so `config.yaml` must exist before you run `docker compose up`.
 

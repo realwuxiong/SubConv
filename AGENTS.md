@@ -6,7 +6,7 @@
 - `api.py` must keep exporting `app` from `subconv.app`; Vercel routes API traffic to `api.py`, and the CLI entrypoint also lives there.
 - The public converter entrypoint is `subconv.converter.ConvertsV2Ray`; `subconv/subscription.py` falls back to it when incoming content is not Clash YAML.
 - Runtime settings precedence is env vars > repo-root `config.yaml` > `config.yaml.example`; `.env` files are not loaded. Keep `config.yaml.example` in sync with required fields.
-- Runtime templates live in the repo-root `template/` directory. `zju.yaml` is the default template when `/sub` or `/proxy` omits the `template` query parameter.
+- Runtime templates live in the repo-root `template/` directory. `general.yaml` is the default template when `/sub` or `/proxy` omits the `template` query parameter.
 
 ## Local commands
 

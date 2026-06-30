@@ -6,7 +6,7 @@
 
 这是一个将订阅转换为 mihomo 兼容配置的项目。
 
-仓库根目录下自带两套模板：`template/zju.yaml` 和 `template/general.yaml`。Web UI 默认使用 `zju`，API 在不传 `template` 查询参数时也默认使用 `zju`。仓库提供 `config.yaml.example` 作为默认运行时配置。
+仓库根目录下自带两套模板：`template/zju.yaml` 和 `template/general.yaml`。Web UI 默认使用 `general`，API 在不传 `template` 查询参数时也默认使用 `general`。仓库提供 `config.yaml.example` 作为默认运行时配置。
 
 ## 截图
 ![screenshot](assets/image.png)
@@ -33,7 +33,7 @@
 - `subconv/`：FastAPI 后端与转换逻辑
 - `api.py`：供 CLI 和 Vercel 使用的薄入口
 - `config.yaml.example`：运行时配置示例；用户改动应放在 `config.yaml`
-- `template/`：运行时 YAML 模板（默认 `zju.yaml`，可选 `general.yaml`）
+- `template/`：运行时 YAML 模板（默认 `general.yaml`，也可选 `zju.yaml`）
 - `mainpage/`：Vue/Vite 前端
 - `docs/`：VitePress 文档站点，通过 GitHub Pages 独立部署
 
