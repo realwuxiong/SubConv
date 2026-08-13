@@ -200,7 +200,7 @@ CUSTOM_PROXY_GROUP:
   prior: DIRECT
 - name: 🎶 Spotify
   type: select
-  prior: DIRECT
+  prior: PROXY
 - name: 🎯 全球直连
   type: select
   prior: DIRECT
@@ -215,7 +215,7 @@ CUSTOM_PROXY_GROUP:
   prior: REJECT
 - name: 🐟 漏网之鱼
   type: select
-  prior: PROXY
+  prior: DIRECT
 - name: 🇭🇰 香港节点
   type: url-test
   rule: false
