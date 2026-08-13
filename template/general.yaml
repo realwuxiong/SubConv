@@ -71,6 +71,10 @@ RULESET:
   - https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Ruleset/AI.list
 - - 💬 Ai平台
   - https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Ruleset/OpenAi.list
+- - 🎵 TikTok
+  - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.list
+- - 🛠️ 自定义代理
+  - https://raw.githubusercontent.com/realwuxiong/SubConv/main/rules/CustomProxy.list
 - - 🎶 网易音乐
   - https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Ruleset/NetEaseMusic.list
 - - 🎶 Spotify
@@ -139,6 +143,12 @@ CUSTOM_PROXY_GROUP:
   type: select
   prior: PROXY
 - name: 💬 Ai平台
+  type: select
+  prior: PROXY
+- name: 🎵 TikTok
+  type: select
+  prior: PROXY
+- name: 🛠️ 自定义代理
   type: select
   prior: PROXY
 - name: 📹 油管视频

@@ -1,0 +1,7 @@
+# Custom proxy rules (mihomo classical format)
+# Add one rule per line. Examples:
+# DOMAIN,www.example.com
+# DOMAIN-SUFFIX,example.com
+# DOMAIN-KEYWORD,example
+
+DOMAIN-SUFFIX,uhdnow.com
