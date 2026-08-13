@@ -1,0 +1,7 @@
+# Custom Emby rules (mihomo classical format)
+# Add one rule per line. Examples:
+# DOMAIN,emby.example.com
+# DOMAIN-SUFFIX,example.com
+# DOMAIN-KEYWORD,emby
+
+DOMAIN-SUFFIX,uhdnow.com
