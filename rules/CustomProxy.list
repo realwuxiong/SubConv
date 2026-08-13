@@ -3,3 +3,5 @@
 # DOMAIN,www.example.com
 # DOMAIN-SUFFIX,example.com
 # DOMAIN-KEYWORD,example
+
+DOMAIN-SUFFIX,nodeseek.com
