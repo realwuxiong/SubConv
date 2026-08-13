@@ -57,6 +57,24 @@ Important files:
 - `template/general.yaml`: default mihomo template
 - `template/zju.yaml`: additional built-in template
 
+## Fork-specific rule groups
+
+The default `general` template adds these independently selectable groups:
+
+- `🎵 TikTok`: uses the actively maintained [blackmatrix7 TikTok ruleset](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/TikTok/TikTok.list).
+- `🎞️ Emby`: combines the [blackmatrix7 Emby ruleset](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Emby/Emby.list) with [`rules/CustomEmby.list`](rules/CustomEmby.list).
+- `🛠️ Custom Proxy`: uses [`rules/CustomProxy.list`](rules/CustomProxy.list). It currently routes `nodeseek.com` and all of its subdomains through this group.
+
+Both local ruleset files use mihomo classical text format. Add one rule per line, for example:
+
+```text
+DOMAIN,www.example.com
+DOMAIN-SUFFIX,example.com
+DOMAIN-KEYWORD,example
+```
+
+Use `rules/CustomEmby.list` for private Emby servers and `rules/CustomProxy.list` for other sites that need a dedicated proxy choice. Changes become available after they are pushed to the repository and the rule provider is refreshed in mihomo.
+
 ## API
 
 - `/sub`: convert subscription sources into a full mihomo config
@@ -71,6 +89,7 @@ Important files:
 - `mainpage/`: Vue/Vite frontend
 - `docs/`: VitePress documentation
 - `template/`: runtime mihomo templates
+- `rules/`: repository-maintained custom rule-provider files
 
 ## License
 

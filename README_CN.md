@@ -57,6 +57,24 @@ bun run dev
 - `template/general.yaml`：默认 mihomo 模板
 - `template/zju.yaml`：额外内置模板
 
+## 本 fork 的规则分组
+
+默认的 `general` 模板增加了以下可独立选择节点的分组：
+
+- `🎵 TikTok`：使用持续维护的 [blackmatrix7 TikTok 规则集](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/TikTok/TikTok.list)。
+- `🎞️ Emby`：同时使用 [blackmatrix7 Emby 规则集](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Emby/Emby.list) 和仓库内的 [`rules/CustomEmby.list`](rules/CustomEmby.list)。
+- `🛠️ 自定义代理`：使用仓库内的 [`rules/CustomProxy.list`](rules/CustomProxy.list)，目前包含 `nodeseek.com` 及其所有子域名。
+
+两个本地规则文件均使用 mihomo classical 文本格式，每行添加一条规则，例如：
+
+```text
+DOMAIN,www.example.com
+DOMAIN-SUFFIX,example.com
+DOMAIN-KEYWORD,example
+```
+
+私人 Emby 服务器域名添加到 `rules/CustomEmby.list`，其他需要独立选择代理的网站添加到 `rules/CustomProxy.list`。修改推送到仓库后，在 mihomo 中刷新对应的规则提供者即可生效。
+
 ## API
 
 - `/sub`：将订阅源转换为完整 mihomo 配置
@@ -71,6 +89,7 @@ bun run dev
 - `mainpage/`：Vue/Vite 前端
 - `docs/`：VitePress 文档
 - `template/`：运行时 mihomo 模板
+- `rules/`：由本仓库维护的自定义 rule-provider 文件
 
 ## 许可证
 
