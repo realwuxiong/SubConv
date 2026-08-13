@@ -61,6 +61,7 @@ Important files:
 
 The default `general` template adds these independently selectable groups:
 
+- `🚀 手动切换1` / `🚀 手动切换2` / `🚀 手动切换3`: three manual selectors that include primary and standby subscription nodes.
 - `🎵 TikTok`: uses the actively maintained [blackmatrix7 TikTok ruleset](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/TikTok/TikTok.list).
 - `🍿 Emby`: combines the [blackmatrix7 Emby ruleset](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Emby/Emby.list) with [`rules/CustomEmby.list`](rules/CustomEmby.list), which currently includes `uhdnow.com` and all of its subdomains.
 - `📍 指定代理` (designated proxy): uses [`rules/CustomProxy.list`](rules/CustomProxy.list). Sites in this file are required to use a proxy; it currently includes `nodeseek.com` and all of its subdomains.

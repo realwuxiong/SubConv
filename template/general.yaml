@@ -133,6 +133,10 @@ CUSTOM_PROXY_GROUP:
   type: select
   manual: true
   rule: false
+- name: 🚀 手动切换3
+  type: select
+  manual: true
+  rule: false
 - name: 🤖 AI节点
   type: select
   rule: false

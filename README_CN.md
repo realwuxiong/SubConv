@@ -61,6 +61,7 @@ bun run dev
 
 默认的 `general` 模板增加了以下可独立选择节点的分组：
 
+- `🚀 手动切换1` / `🚀 手动切换2` / `🚀 手动切换3`：三个手动节点选择组，均包含主订阅和备用订阅节点。
 - `🎵 TikTok`：使用持续维护的 [blackmatrix7 TikTok 规则集](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/TikTok/TikTok.list)。
 - `🍿 Emby`：同时使用 [blackmatrix7 Emby 规则集](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Emby/Emby.list) 和仓库内的 [`rules/CustomEmby.list`](rules/CustomEmby.list)，目前包含 `uhdnow.com` 及其所有子域名。
 - `📍 指定代理`：使用仓库内的 [`rules/CustomProxy.list`](rules/CustomProxy.list)，其中的网站必须使用代理；目前包含 `nodeseek.com` 及其所有子域名。
