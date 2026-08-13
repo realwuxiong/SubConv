@@ -3,3 +3,5 @@
 # DOMAIN,emby.example.com
 # DOMAIN-SUFFIX,example.com
 # DOMAIN-KEYWORD,emby
+
+DOMAIN-SUFFIX,uhdnow.com
