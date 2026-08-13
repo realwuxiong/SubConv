@@ -141,12 +141,6 @@ CUSTOM_PROXY_GROUP:
   type: select
   rule: false
   regex: (?i:(?:\bAI\b|人工智能|OpenAI|ChatGPT|GPT|Claude|Gemini|Bard|Copilot|Perplexity|Poe|Grok))
-- name: 🔯 故障转移
-  type: fallback
-  rule: false
-- name: 🔮 负载均衡
-  type: load-balance
-  rule: false
 - name: 📲 电报消息
   type: select
   prior: PROXY
