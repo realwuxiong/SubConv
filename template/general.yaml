@@ -77,7 +77,7 @@ RULESET:
   - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Emby/Emby.list
 - - 🎞️ Emby
   - https://raw.githubusercontent.com/realwuxiong/SubConv/main/rules/CustomEmby.list
-- - 🛠️ 自定义代理
+- - 🚀 指定代理
   - https://raw.githubusercontent.com/realwuxiong/SubConv/main/rules/CustomProxy.list
 - - 🎶 网易音乐
   - https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Ruleset/NetEaseMusic.list
@@ -155,7 +155,7 @@ CUSTOM_PROXY_GROUP:
 - name: 🎞️ Emby
   type: select
   prior: PROXY
-- name: 🛠️ 自定义代理
+- name: 🚀 指定代理
   type: select
   prior: PROXY
 - name: 📹 油管视频

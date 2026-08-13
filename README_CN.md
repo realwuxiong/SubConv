@@ -63,7 +63,7 @@ bun run dev
 
 - `🎵 TikTok`：使用持续维护的 [blackmatrix7 TikTok 规则集](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/TikTok/TikTok.list)。
 - `🎞️ Emby`：同时使用 [blackmatrix7 Emby 规则集](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Emby/Emby.list) 和仓库内的 [`rules/CustomEmby.list`](rules/CustomEmby.list)。
-- `🛠️ 自定义代理`：使用仓库内的 [`rules/CustomProxy.list`](rules/CustomProxy.list)，目前包含 `nodeseek.com` 及其所有子域名。
+- `🚀 指定代理`：使用仓库内的 [`rules/CustomProxy.list`](rules/CustomProxy.list)，其中的网站必须使用代理；目前包含 `nodeseek.com` 及其所有子域名。
 
 两个本地规则文件均使用 mihomo classical 文本格式，每行添加一条规则，例如：
 
