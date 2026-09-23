@@ -54,6 +54,8 @@ RULESET:
   - https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Ruleset/AI.list
 - - 💬 Ai平台
   - https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Ruleset/OpenAi.list
+- - 💬 Ai平台
+  - https://raw.githubusercontent.com/realwuxiong/SubConv/main/rules/CustomAI.list
 - - 🎯 全球直连
   - https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/LocalAreaNetwork.list
 - - 🎯 全球直连

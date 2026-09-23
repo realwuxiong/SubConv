@@ -1,0 +1,7 @@
+# Custom AI rules (mihomo classical format)
+# Add one rule per line. Examples:
+# DOMAIN,ai.example.com
+# DOMAIN-SUFFIX,example.com
+# DOMAIN-KEYWORD,example
+
+DOMAIN-SUFFIX,muse.ai

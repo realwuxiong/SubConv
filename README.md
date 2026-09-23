@@ -63,11 +63,12 @@ The default `general` template adds these independently selectable groups:
 
 - `🚀 手动切换1` / `🚀 手动切换2` / `🚀 手动切换3`: three manual selectors that include primary and standby subscription nodes.
 - `🎵 TikTok`: uses the actively maintained [blackmatrix7 TikTok ruleset](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/TikTok/TikTok.list).
+- `💬 Ai平台`: both `general` and `zju` templates use [`rules/CustomAI.list`](rules/CustomAI.list), which currently includes `muse.ai` and all of its subdomains.
 - `🍿 Emby`: combines the [blackmatrix7 Emby ruleset](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Emby/Emby.list) with [`rules/CustomEmby.list`](rules/CustomEmby.list), which currently includes `uhdnow.com` and all of its subdomains.
 - `📍 指定代理` (designated proxy): uses [`rules/CustomProxy.list`](rules/CustomProxy.list). Sites in this file are required to use a proxy; it currently includes `nodeseek.com` and all of its subdomains.
 - `🎶 Spotify` defaults to `🚀 节点选择`, while the final `🐟 漏网之鱼` fallback defaults to `DIRECT`.
 
-Both local ruleset files use mihomo classical text format. Add one rule per line, for example:
+All three custom ruleset files use mihomo classical text format. Add one rule per line, for example:
 
 ```text
 DOMAIN,www.example.com
@@ -75,7 +76,7 @@ DOMAIN-SUFFIX,example.com
 DOMAIN-KEYWORD,example
 ```
 
-Use `rules/CustomEmby.list` for private Emby servers and `rules/CustomProxy.list` for other sites that need a dedicated proxy choice. Changes become available after they are pushed to the repository and the rule provider is refreshed in mihomo.
+Use `rules/CustomAI.list` for AI sites, `rules/CustomEmby.list` for private Emby servers, and `rules/CustomProxy.list` for other sites that need a dedicated proxy choice. Changes become available after they are pushed to the repository and the rule provider is refreshed in mihomo.
 
 ## API
 
