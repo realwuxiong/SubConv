@@ -63,7 +63,7 @@ DISALLOW_ROBOTS: true
           - 240.0.0.0/4
         fake-ip-filter:
         - +.lan
-        - +.microsoft*.com
+        - +.microsoft.com
         - localhost.ptlogin2.qq.com
     ```
 - `TEST_URL`: The URL of the test node, such as
