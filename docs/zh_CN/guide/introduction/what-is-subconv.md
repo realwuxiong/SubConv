@@ -18,7 +18,7 @@
 
 - 支持 Clash YAML 订阅和 V2Ray 风格的 base64 链接（即原始订阅不一定是 Clash YAML）
 - 自带 Web-UI (感谢 [@Musanico](https://github.com/musanico))
-- 大体基于 ACL 的规则
+- 使用 blackmatrix7/ios_rule_script 公共规则及本仓库维护的自定义覆盖规则
 - 基于 proxy-provider 的节点自动更新
 - 基于 rule-provider 的规则自动更新
 - 支持代理 rule-provider 防止无法从 GitHub 获取规则集

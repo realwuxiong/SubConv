@@ -18,7 +18,7 @@ We provide one built-in template, `general`, which is used by default.
 
 - Support Clash YAML subscriptions and V2Ray-style base64 links (the original subscription does not have to be Clash YAML)
 - A Web-UI (thanks to [@Musanico](https://github.com/musanico))
-- Rules based on ACL
+- Public rules from blackmatrix7/ios_rule_script with repository-maintained custom overrides
 - Nodes auto update based on proxy-provider
 - Rules auto update based on rule-provider
 - Support proxy rule-provider to prevent failure to get rules from GitHub

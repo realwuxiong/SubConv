@@ -56,13 +56,15 @@ bun run dev
 - `config.yaml.example`：默认运行时配置
 - `template/general.yaml`：默认 mihomo 模板
 
+内置 `general` 模板的公共规则统一来自 [blackmatrix7/ios_rule_script 的 Clash 目录](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash)，自定义规则由本仓库维护。规则源映射见 [规则集文档](docs/zh_CN/guide/configuration/rule-set.md)。所有规则提供者仍每 7 天自动刷新，也可在客户端手动刷新。
+
 ## 本 fork 的规则分组
 
 默认的 `general` 模板增加了以下可独立选择节点的分组：
 
 - `🚀 手动切换1` / `🚀 手动切换2` / `🚀 手动切换3`：三个手动节点选择组，均包含主订阅和备用订阅节点。
 - `🎵 TikTok`：使用持续维护的 [blackmatrix7 TikTok 规则集](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/TikTok/TikTok.list)。
-- `💬 Ai平台`：`general` 模板使用仓库内的 [`rules/CustomAI.list`](rules/CustomAI.list)，目前包含 `muse.ai`、`meta.ai` 及其所有子域名。
+- `💬 Ai平台`：使用 blackmatrix7 的 OpenAI、Claude、Gemini、Copilot 分类，并由 [`rules/CustomAI.list`](rules/CustomAI.list) 补充 Muse、Meta AI、Cursor、NotebookLM 等服务域名。
 - `🍿 Emby`：同时使用 [blackmatrix7 Emby 规则集](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Emby/Emby.list) 和仓库内的 [`rules/CustomEmby.list`](rules/CustomEmby.list)，目前包含 `uhdnow.com` 及其所有子域名。
 - `📍 指定代理`：使用仓库内的 [`rules/CustomProxy.list`](rules/CustomProxy.list)，其中的网站必须使用代理；目前包含 `nodeseek.com` 及其所有子域名。
 - `🎶 Spotify` 默认使用 `🚀 节点选择`，最终兜底的 `🐟 漏网之鱼` 默认使用 `DIRECT`。
