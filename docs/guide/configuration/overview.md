@@ -1,6 +1,6 @@
 # Configuration
 
-Runtime settings are described by `config.yaml.example` in the repository root. If you want to customize them, create `config.yaml` in your own deployment or fork. The runtime templates live in the root `template/` directory as `template/zju.yaml` and `template/general.yaml`.
+Runtime settings are described by `config.yaml.example` in the repository root. If you want to customize them, create `config.yaml` in your own deployment or fork. The runtime templates live in the root `template/` directory with `template/general.yaml` as the only built-in template.
 
 The most important setting is `DEFAULT_TEMPLATE`, which defaults to `general`. When the `template` query parameter is omitted, the server uses the template selected by `DEFAULT_TEMPLATE`.
 

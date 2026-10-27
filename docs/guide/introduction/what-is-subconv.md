@@ -8,7 +8,7 @@ It's user-friendly and easy to use.
 
 It is easy to deploy on [Vercel](https://vercel.com), with Docker, or on your own VPS.
 
-We provide built-in `zju` and `general` templates, with `general` used by default.
+We provide one built-in template, `general`, which is used by default.
 
 ## Screenshots
 

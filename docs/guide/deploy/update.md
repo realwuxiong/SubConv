@@ -14,7 +14,7 @@ The documentation site is built from the `docs/` directory and deployed separate
 3. Pull the latest image with `docker compose pull`.
 4. Check the Release page to see if there are any runtime or template settings that need to be updated. If not, skip steps 5-6.
 5. Backup `config.yaml` and the `template/` directory, then compare them with `config.yaml.example` and the latest `template/` directory from this repository.
-6. Merge any changes you need into your local `config.yaml`, `template/zju.yaml`, or `template/general.yaml` files.
+6. Merge any changes you need into your local `config.yaml` or `template/general.yaml` files.
 7. Start the service with `docker compose up -d`.
 
 ## If deployed on your VPS (binary file)
@@ -23,5 +23,5 @@ The documentation site is built from the `docs/` directory and deployed separate
 3. Check the Release page to see if there are any runtime or template settings that need to be updated. If not, skip steps 4-6.
 4. Backup `config.yaml` and the `template/` directory, then compare them with `config.yaml.example` and the latest `template/` directory from this repository.
 5. Keep the refreshed `config.yaml` and `template/` directory next to `api`.
-6. Merge any local changes into `config.yaml`, `template/zju.yaml`, or `template/general.yaml` as needed.
+6. Merge any local changes into `config.yaml` or `template/general.yaml` as needed.
 7. Run the program again.

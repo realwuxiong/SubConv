@@ -7,7 +7,7 @@ English | [中文](README_CN.md)
 
 SubConv converts subscription links or Clash YAML into mihomo-compatible configuration files.
 
-This fork keeps the backend, web UI, and documentation in one repository. The default runtime template is `general`; `zju` is also available.
+This fork keeps the backend, web UI, and documentation in one repository. The only built-in runtime template is `general`.
 
 ## Features
 
@@ -55,7 +55,6 @@ Important files:
 
 - `config.yaml.example`: default runtime settings
 - `template/general.yaml`: default mihomo template
-- `template/zju.yaml`: additional built-in template
 
 ## Fork-specific rule groups
 
@@ -63,10 +62,12 @@ The default `general` template adds these independently selectable groups:
 
 - `🚀 手动切换1` / `🚀 手动切换2` / `🚀 手动切换3`: three manual selectors that include primary and standby subscription nodes.
 - `🎵 TikTok`: uses the actively maintained [blackmatrix7 TikTok ruleset](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/TikTok/TikTok.list).
-- `💬 Ai平台`: both `general` and `zju` templates use [`rules/CustomAI.list`](rules/CustomAI.list), which currently includes `muse.ai`, `meta.ai`, and all of their subdomains.
+- `💬 Ai平台`: the `general` template uses [`rules/CustomAI.list`](rules/CustomAI.list), which currently includes `muse.ai`, `meta.ai`, and all of their subdomains.
 - `🍿 Emby`: combines the [blackmatrix7 Emby ruleset](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Emby/Emby.list) with [`rules/CustomEmby.list`](rules/CustomEmby.list), which currently includes `uhdnow.com` and all of its subdomains.
 - `📍 指定代理` (designated proxy): uses [`rules/CustomProxy.list`](rules/CustomProxy.list). Sites in this file are required to use a proxy; it currently includes `nodeseek.com` and all of its subdomains.
 - `🎶 Spotify` defaults to `🚀 节点选择`, while the final `🐟 漏网之鱼` fallback defaults to `DIRECT`.
+
+Custom rules are matched first in this order: `CustomAI.list`, `CustomEmby.list`, then `CustomProxy.list`. They override later built-in rules, including ad blocking and direct routing. AI and YouTube rules precede the general Google rules. The converter keeps its own hostname direct rule ahead of the template rules.
 
 All three custom ruleset files use mihomo classical text format. Add one rule per line, for example:
 

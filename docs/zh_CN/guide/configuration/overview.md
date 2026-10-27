@@ -1,6 +1,6 @@
 # 配置
 
-仓库根目录下的 `config.yaml.example` 描述了默认的运行时参数。如果你需要自定义，请在自己的部署环境或 fork 仓库里创建 `config.yaml`。运行时模板使用 YAML 格式，位于仓库根目录的 `template/` 下，当前内置 `template/zju.yaml` 和 `template/general.yaml` 两个文件。
+仓库根目录下的 `config.yaml.example` 描述了默认的运行时参数。如果你需要自定义，请在自己的部署环境或 fork 仓库里创建 `config.yaml`。运行时模板使用 YAML 格式，位于仓库根目录的 `template/` 下，当前仅内置 `template/general.yaml`。
 
 最重要的参数是 `DEFAULT_TEMPLATE`，默认值为 `general`。当请求里不传 `template` 查询参数时，服务就会使用 `DEFAULT_TEMPLATE` 指定的模板。
 

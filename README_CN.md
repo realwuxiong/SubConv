@@ -7,7 +7,7 @@
 
 SubConv 用于将订阅链接或 Clash YAML 转换为 mihomo 兼容配置。
 
-这个 fork 将后端、Web UI 和文档放在同一个仓库中维护。默认运行时模板是 `general`，也内置了 `zju` 模板。
+这个 fork 将后端、Web UI 和文档放在同一个仓库中维护。唯一内置的运行时模板是 `general`。
 
 ## 功能
 
@@ -55,7 +55,6 @@ bun run dev
 
 - `config.yaml.example`：默认运行时配置
 - `template/general.yaml`：默认 mihomo 模板
-- `template/zju.yaml`：额外内置模板
 
 ## 本 fork 的规则分组
 
@@ -63,10 +62,12 @@ bun run dev
 
 - `🚀 手动切换1` / `🚀 手动切换2` / `🚀 手动切换3`：三个手动节点选择组，均包含主订阅和备用订阅节点。
 - `🎵 TikTok`：使用持续维护的 [blackmatrix7 TikTok 规则集](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/TikTok/TikTok.list)。
-- `💬 Ai平台`：`general` 和 `zju` 模板均使用仓库内的 [`rules/CustomAI.list`](rules/CustomAI.list)，目前包含 `muse.ai`、`meta.ai` 及其所有子域名。
+- `💬 Ai平台`：`general` 模板使用仓库内的 [`rules/CustomAI.list`](rules/CustomAI.list)，目前包含 `muse.ai`、`meta.ai` 及其所有子域名。
 - `🍿 Emby`：同时使用 [blackmatrix7 Emby 规则集](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Emby/Emby.list) 和仓库内的 [`rules/CustomEmby.list`](rules/CustomEmby.list)，目前包含 `uhdnow.com` 及其所有子域名。
 - `📍 指定代理`：使用仓库内的 [`rules/CustomProxy.list`](rules/CustomProxy.list)，其中的网站必须使用代理；目前包含 `nodeseek.com` 及其所有子域名。
 - `🎶 Spotify` 默认使用 `🚀 节点选择`，最终兜底的 `🐟 漏网之鱼` 默认使用 `DIRECT`。
+
+自定义规则按 `CustomAI.list`、`CustomEmby.list`、`CustomProxy.list` 的顺序优先匹配，覆盖后面的内置规则，包括广告拦截和直连规则。AI、YouTube 专用规则排在 Google 通用规则之前。转换器自身域名的直连规则仍位于模板规则之前。
 
 三个自定义规则文件均使用 mihomo classical 文本格式，每行添加一条规则，例如：
 

@@ -14,7 +14,7 @@
 3. 使用 `docker compose pull` 来拉取最新的镜像。
 4. 查看 Release 页面，看看有没有需要更新的运行时配置或模板项。若无，跳过 5~6 步。
 5. 备份 `config.yaml` 和 `template/` 目录，然后分别与 `config.yaml.example` 和本仓库最新的 `template/` 目录进行对比。
-6. 将你需要保留的改动合并回本地的 `config.yaml`、`template/zju.yaml` 或 `template/general.yaml`。
+6. 将你需要保留的改动合并回本地的 `config.yaml` 或 `template/general.yaml`。
 7. 使用 `docker compose up -d` 来启动服务。
 
 ## 如果部署在你的 VPS 上（二进制文件）
@@ -23,5 +23,5 @@
 3. 查看 Release 页面，看看有没有需要更新的运行时配置或模板项。若无，跳过 4~6 步。
 4. 备份 `config.yaml` 和 `template/` 目录，然后分别与 `config.yaml.example` 和本仓库最新的 `template/` 目录进行对比。
 5. 确保更新后的 `config.yaml` 和 `template/` 目录与 `api` 放在一起。
-6. 按需把本地改动合并回 `config.yaml`、`template/zju.yaml` 或 `template/general.yaml`。
+6. 按需把本地改动合并回 `config.yaml` 或 `template/general.yaml`。
 7. 重新运行程序。
