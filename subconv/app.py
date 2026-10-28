@@ -1,3 +1,4 @@
+import logging
 import re
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -23,6 +24,7 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+logger = logging.getLogger(__name__)
 
 STATIC_DIR = Path("mainpage/dist")
 if STATIC_DIR.is_dir():
@@ -184,15 +186,22 @@ async def proxy(request: Request, url: str):
         )
 
     async def stream_body():
+        skipped = 0
         try:
-            async for chunk in response.aiter_bytes():
-                yield chunk
+            async for line in response.aiter_lines():
+                # URL matching rules from Surge cannot be represented by mihomo.
+                rule_type = line.lstrip("\ufeff \t").partition(",")[0].strip()
+                if rule_type.upper() == "URL-REGEX":
+                    skipped += 1
+                    continue
+                yield line + "\n"
         finally:
             await response.aclose()
             await client.aclose()
+            if skipped:
+                logger.warning("Skipped %d unsupported URL-REGEX rules from %s", skipped, url)
 
-    content_type = response.headers.get("Content-Type")
-    return StreamingResponse(stream_body(), media_type=content_type)
+    return StreamingResponse(stream_body(), media_type="text/plain")
 
 
 @app.get("/{path:path}")

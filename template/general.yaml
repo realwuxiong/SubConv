@@ -44,6 +44,15 @@ RULESET:
   - https://raw.githubusercontent.com/realwuxiong/SubConv/main/rules/CustomEmby.list
 - - 📍 指定代理
   - https://raw.githubusercontent.com/realwuxiong/SubConv/main/rules/CustomProxy.list
+# Keep downloads and Google updates ahead of upstream direct exceptions.
+- - 🚀 节点选择
+  - '[]DOMAIN-SUFFIX,github.com'
+- - 🚀 节点选择
+  - '[]DOMAIN-SUFFIX,githubusercontent.com'
+- - 🚀 节点选择
+  - '[]DOMAIN,update.googleapis.com'
+- - 🚀 节点选择
+  - '[]DOMAIN,clientservices.googleapis.com'
 - - 🎯 全球直连
   - https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.list
 - - 🎯 全球直连

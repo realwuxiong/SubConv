@@ -7,7 +7,7 @@ The only bundled template is [`template/general.yaml`](https://github.com/realwu
 `RULESET` is evaluated from top to bottom; the first matching rule selects the routing group:
 
 1. `CustomAI.list`, `CustomEmby.list`, and `CustomProxy.list` override later direct, blocking, and public service rules. If multiple Custom lists match, the earlier list wins.
-2. LAN and direct exceptions, followed by privacy, advertising, and application filtering.
+2. Inline proxy rules for GitHub downloads and Google updates, then LAN and direct exceptions, followed by privacy, advertising, and application filtering.
 3. Service-specific lists: AI precedes Bing, Microsoft, and Google; YouTube precedes Google.
 4. Domestic/global media aggregates, general proxy rules, domestic addresses, and downloads.
 5. `GEOIP,CN` and the final fallback.
@@ -46,3 +46,17 @@ Some blackmatrix7 AI categories omit previously covered service domains. `Custom
 Rule providers still refresh automatically every 7 days and can be refreshed manually. Update the complete subscription config after this source migration. For changes to an existing Custom file, push the changes to the repository and refresh that rule provider.
 
 This migration changes rule data and supplemental domains; DNS, ports, subscription update intervals, and Geo database settings retain their existing values.
+
+Rules are evaluated in `RULESET` order. Use the `[]` prefix for inline rules as an alternative to rule set URLs:
+
+```yaml
+RULESET:
+- - 🚀 节点选择
+  - '[]DOMAIN-SUFFIX,github.com'
+```
+
+After the three Custom lists and before public rule sets, the bundled general template routes `github.com`, `githubusercontent.com` (including GitHub Release downloads), `update.googleapis.com`, and `clientservices.googleapis.com` through `🚀 节点选择` before direct rule sets. Select a working node in that group.
+
+By default, SubConv's `/proxy` filters unsupported `URL-REGEX` lines and logs a server-side warning. Other rules, including `IP-ASN`, are preserved. The `notproxyrule` option bypasses this filtering by downloading rules directly, so its sources must already be compatible with mihomo.
+
+After updating the service, regenerate and refresh the subscription and force a rule set cache update in the client. OpenClash overrides may change the final rules. If ASN downloads still time out, check the effective GitHub routing and update the ASN database again. The ASN database is separate from `Country.mmdb`.

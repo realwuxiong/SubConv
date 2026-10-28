@@ -280,7 +280,7 @@ async def pack(
 
     rule_providers: dict[str, dict[str, ProxyMapping]] = {"rule-providers": {}}
     rule_provider_map = rule_providers["rule-providers"]
-    rule_map: dict[str, str] = {}
+    rule_map: list[tuple[str, str]] = []
     classical: ProxyMapping = {
         "type": "http",
         "behavior": "classical",
@@ -289,12 +289,13 @@ async def pack(
     }
     for item in template_config.RULESET:
         rule_url = item[1]
-        name = urlparse(rule_url).path.split("/")[-1].split(".")[0]
-        while name in rule_map:
-            name += str(random.randint(0, 9))
-        rule_map[name] = item[0]
         if rule_url.startswith("[]"):
+            rule_map.append((rule_url, item[0]))
             continue
+        name = urlparse(rule_url).path.split("/")[-1].split(".")[0]
+        while name in rule_provider_map:
+            name += str(random.randint(0, 9))
+        rule_map.append((name, item[0]))
         if notproxyrule is None:
             query_params = {"url": rule_url}
             if template_name != config.default_template_name():
@@ -309,7 +310,7 @@ async def pack(
     rules: dict[str, list[str]] = {"rules": []}
     rules_list = rules["rules"]
     rules_list.append(f"DOMAIN,{domain},DIRECT")
-    for k, v in rule_map.items():
+    for k, v in rule_map:
         if not k.startswith("[]"):
             rules_list.append(f"RULE-SET,{k},{v}")
         elif k[2:] != "FINAL" and k[2:] != "MATCH":
